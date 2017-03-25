@@ -19,9 +19,6 @@ namespace RustIO.ApiClient
 
         public RustIOApi()
         {
-            webClient = new CookieWebClient();
-            webClient.Proxy = new WebProxy("127.0.0.1:8888", false, new[] {"<-loopback>"}); // fiddler debug
-
             webClient.Headers["Origin"] = "http://playrust.io";
 
             servers = new List<GameServer>();
