@@ -134,7 +134,7 @@ namespace RustIO.ApiClient
             }
             catch (WebException ex)
             {
-                throw;
+                return null;
             }
         }
     }
