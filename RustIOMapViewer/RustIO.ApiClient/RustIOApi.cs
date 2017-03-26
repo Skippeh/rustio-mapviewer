@@ -50,7 +50,14 @@ namespace RustIO.ApiClient
 
         public ServerStatus RequestStatus(GameServer server)
         {
+            CheckForIO(server);
             return MakeRequest<ServerStatus>($"http://{server.Endpoint}/status.json");
+        }
+
+        private void CheckForIO(GameServer server)
+        {
+            if (!server.HasIO)
+                throw new ArgumentException("Server not does have RustIO");
         }
 
         public Monument[] RequestMonuments(GameServer server)
@@ -102,9 +109,18 @@ namespace RustIO.ApiClient
                     string jsonResponse = encoding.GetString(bytes);
                     var jObject = JObject.Parse(jsonResponse);
 
-                    if (jObject["error"] != null && jObject["error"].Value<string>() == "notfound")
+                    if (jObject["error"] != null)
                     {
-                        return default(T);
+                        string error = jObject["error"].Value<string>();
+
+                        if (error == "notfound")
+                        {
+                            return default(T);
+                        }
+                        else
+                        {
+                            throw new NotImplementedException("Unhandled response error: " + error);
+                        }
                     }
                 }
 
