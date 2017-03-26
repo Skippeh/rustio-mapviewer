@@ -19,6 +19,7 @@ namespace RustIO.ApiClient
 
         public RustIOApi()
         {
+            webClient = new CookieWebClient();
             webClient.Headers["Origin"] = "http://playrust.io";
 
             servers = new List<GameServer>();
