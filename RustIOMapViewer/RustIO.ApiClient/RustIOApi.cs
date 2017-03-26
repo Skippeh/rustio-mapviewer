@@ -133,9 +133,9 @@ namespace RustIO.ApiClient
             SetReferer(server.Level, server.World.Size, server.World.Seed);
 
             string requestUrl = server.HasIO
-                                ? $"http://{server.Hostname}/map.jpg"
+                                ? $"http://{server.Endpoint}/map.jpg"
                                 : $"http://playrust.io/map.jpg?level={HttpUtility.UrlEncode(server.Level)}&size={server.World.Size}&seed={server.World.Seed}";
-
+            
             try
             {
                 byte[] bytes = webClient.DownloadData(requestUrl);
