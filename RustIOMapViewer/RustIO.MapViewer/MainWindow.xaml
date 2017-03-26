@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RustIO.MapViewer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="RustIO - Server List" Height="500" Width="350" MinWidth="350" MinHeight="500">
+    <Grid Background="#FF0E2934">
+        <Label Content="Select server" HorizontalAlignment="Center" Margin="5,5,0,0" VerticalAlignment="Top" FontFamily="Arial" Foreground="#FFE1E1E1" FontWeight="Bold"/>
+        <DataGrid x:Name="serverList" Margin="10,57,10,35"/>
+        <TextBox x:Name="serverSearch" Height="23" Margin="10,29,10,0" TextWrapping="Wrap" VerticalAlignment="Top" FontFamily="Arial"/>
+        <Button x:Name="btnView" Content="View" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="50"/>
+        <Button x:Name="btnRefreshList" Content="Refresh list" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="75"/>
     </Grid>
 </Window>
