@@ -7,8 +7,8 @@
     <ProjectGuid>{E44BCFEC-E3DA-4C0C-B0D2-EECD757BFB41}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RustIO.MapViewer</RootNamespace>
-    <AssemblyName>RustIO.MapViewer</AssemblyName>
+    <RootNamespace>RustIO.MapDownloader</RootNamespace>
+    <AssemblyName>RustIO.MapDownloader</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
